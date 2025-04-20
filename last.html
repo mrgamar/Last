@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Fire Rewards Redeem Gift</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: url('file-8R64e4Gn5RKpjHPjy3qWPL') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.7);
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #ffcc00;
+      margin-bottom: 25px;
+      text-shadow: 0 0 12px #ffcc00;
+    }
+
+    input[type="text"] {
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 2px solid #ffcc00;
+      width: 90%;
+      max-width: 400px;
+      background: #111;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    .check-btn {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      background: #ffcc00;
+      color: #000;
+      cursor: pointer;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 10;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background: #1c1c1c;
+      padding: 30px;
+      border-radius: 16px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 0 15px #ffcc00;
+    }
+
+    .gift-box {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 15px 0;
+      border: 1px solid #444;
+    }
+
+    .gift-box.claimed {
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .claim-btn {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-weight: bold;
+      background: #00ffcc;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .claim-btn:disabled {
+      background: gray;
+      cursor: not-allowed;
+    }
+
+    .character {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 150px;
+      max-width: 35%;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .character {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <img src="file-J9YPJ4uUpks39MGvmtUc8Q" alt="Free Fire Character" class="character">
+    <h1>Free Fire Cracked ID Gift Rewards</h1>
+    <input type="text" id="ffid" placeholder="Enter Your Free Fire ID">
+    <br>
+    <button class="check-btn" onclick="checkID()">Check Now</button>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>ID Matched! Claim Your Gift</h2>
+
+      <div class="gift-box" id="box1">
+        <p><strong>Reward:</strong> Evo Gun Max Box</p>
+        <p><strong>Code:</strong> FFSKTXVQF2NR</p>
+        <a href="https://garena-free-fire-eight.vercel.app/" target="_blank">
+          <button class="claim-btn" onclick="claimBox(1)">Claim Now</button>
+        </a>
+      </div>
+
+      <div class="gift-box" id="box2">
+        <p><strong>Reward:</strong> Elite Pass Box</p>
+        <p><strong>Code:</strong> FNSCQKVT2MFK</p>
+        <a href="https://garena-free-fire-eight.vercel.app/" target="_blank">
+          <button class="claim-btn" onclick="claimBox(2)">Claim Now</button>
+        </a>
+      </div>
+
+      <div class="gift-box" id="box3">
+        <p><strong>Reward:</strong> Session 10 Elite Pass Bundle</p>
+        <p><strong>Code:</strong> FFXVPQZ9NSTF</p>
+        <a href="https://garena-free-fire-eight.vercel.app/" target="_blank">
+          <button class="claim-btn" onclick="claimBox(3)">Claim Now</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function checkID() {
+      const id = document.getElementById("ffid").value.trim();
+      if (id.length < 5) {
+        alert("Please enter a valid Free Fire ID!");
+        return;
+      }
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function claimBox(claimedBox) {
+      for (let i = 1; i <= 3; i++) {
+        if (i !== claimedBox) {
+          document.querySelector(`#box${i}`).classList.add("claimed");
+          document.querySelector(`#box${i} .claim-btn`).disabled = true;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
